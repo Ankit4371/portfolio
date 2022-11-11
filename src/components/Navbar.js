@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link , useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
 import ReorderIcon from "@mui/icons-material/Reorder";
 
@@ -8,17 +8,20 @@ function Navbar() {
 
   const location = useLocation();
 
-  useEffect(()=>{
+  useEffect(() => {
     setVerticalNav(false);
-  },[location]);
+  }, [location]);
 
   return (
     <div className="navbar" id={verticalNav ? "open" : "close"}>
       <div className="toggleButton">
-        <button 
-        onClick={ () => {
-             setVerticalNav( (prev) => !prev);
-             }}>
+        <div>
+          <h1 className="heading">Ankit's Portfolio</h1>
+        </div>
+        <button
+          onClick={() => {
+            setVerticalNav((prev) => !prev);
+          }}>
           <ReorderIcon></ReorderIcon>
         </button>
       </div>
